@@ -1,0 +1,666 @@
+[
+  {
+    "id": 1,
+    "name": "Gulab jamun",
+    "price": 30.0,
+    "category": "Add-ons",
+    "sub_category": "",
+    "is_vegetarian": true,
+    "is_chef_special": false,
+    "tags": [
+      "add-ons"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Jamun Raita Mint Mushroom Palak",
+    "price": 260.0,
+    "category": "Add-ons",
+    "sub_category": "Mushroom",
+    "is_vegetarian": true,
+    "is_chef_special": false,
+    "tags": [
+      "mushroom",
+      "palak",
+      "add-ons"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Veg Biryani with Raita",
+    "price": 200.0,
+    "category": "Add-ons",
+    "sub_category": "",
+    "is_vegetarian": true,
+    "is_chef_special": false,
+    "tags": [
+      "add-ons"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Veg Hyderabadi Biryani with Raita",
+    "price": 210.0,
+    "category": "Add-ons",
+    "sub_category": "",
+    "is_vegetarian": true,
+    "is_chef_special": false,
+    "tags": [
+      "add-ons"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Amritsari Chur Chur Naan",
+    "price": 210.0,
+    "category": "Breads",
+    "sub_category": "Naans",
+    "is_vegetarian": true,
+    "is_chef_special": false,
+    "tags": [
+      "breads"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Butter Naan",
+    "price": 60.0,
+    "category": "Breads",
+    "sub_category": "Naans",
+    "is_vegetarian": true,
+    "is_chef_special": false,
+    "tags": [
+      "creamy",
+      "breads"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Chur Chur Naan Pudina Chaap",
+    "price": 250.0,
+    "category": "Breads",
+    "sub_category": "Soya Chaap",
+    "is_vegetarian": true,
+    "is_chef_special": false,
+    "tags": [
+      "chaap",
+      "breads"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Missi Roti",
+    "price": 50.0,
+    "category": "Breads",
+    "sub_category": "Rotis",
+    "is_vegetarian": true,
+    "is_chef_special": false,
+    "tags": [
+      "breads"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Mix Chur Chur Naan",
+    "price": 210.0,
+    "category": "Breads",
+    "sub_category": "Naans",
+    "is_vegetarian": true,
+    "is_chef_special": false,
+    "tags": [
+      "breads"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Mix Chur Chur Naan",
+    "price": 60.0,
+    "category": "Breads",
+    "sub_category": "Naans",
+    "is_vegetarian": true,
+    "is_chef_special": false,
+    "tags": [
+      "breads"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Paneer Chur Chur Naan",
+    "price": 220.0,
+    "category": "Breads",
+    "sub_category": "Paneer",
+    "is_vegetarian": true,
+    "is_chef_special": false,
+    "tags": [
+      "paneer",
+      "breads"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Paneer Naan",
+    "price": 70.0,
+    "category": "Breads",
+    "sub_category": "Paneer",
+    "is_vegetarian": true,
+    "is_chef_special": false,
+    "tags": [
+      "paneer",
+      "breads"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Plain Naan",
+    "price": 50.0,
+    "category": "Breads",
+    "sub_category": "Naans",
+    "is_vegetarian": true,
+    "is_chef_special": false,
+    "tags": [
+      "breads"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Plain Roti",
+    "price": 15.0,
+    "category": "Breads",
+    "sub_category": "Rotis",
+    "is_vegetarian": true,
+    "is_chef_special": false,
+    "tags": [
+      "breads"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Rajma With Rice",
+    "price": 130.0,
+    "category": "Combos",
+    "sub_category": "Rice",
+    "is_vegetarian": true,
+    "is_chef_special": false,
+    "tags": [
+      "rajma",
+      "combos"
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Brownie Banana Sundae",
+    "price": 160.0,
+    "category": "Desserts",
+    "sub_category": "Sundaes",
+    "is_vegetarian": true,
+    "is_chef_special": false,
+    "tags": [
+      "desserts"
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Brownie Sundae",
+    "price": 170.0,
+    "category": "Desserts",
+    "sub_category": "Sundaes",
+    "is_vegetarian": true,
+    "is_chef_special": false,
+    "tags": [
+      "desserts"
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Chocolate Waffles",
+    "price": 210.0,
+    "category": "Desserts",
+    "sub_category": "Waffles",
+    "is_vegetarian": true,
+    "is_chef_special": false,
+    "tags": [
+      "desserts"
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Gulab jamun with ice cream",
+    "price": 60.0,
+    "category": "Desserts",
+    "sub_category": "",
+    "is_vegetarian": true,
+    "is_chef_special": false,
+    "tags": [
+      "creamy",
+      "desserts"
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Aloo Chaat",
+    "price": 130.0,
+    "category": "Main Course",
+    "sub_category": "Potato",
+    "is_vegetarian": true,
+    "is_chef_special": false,
+    "tags": [
+      "aloo",
+      "main-course"
+    ]
+  },
+  {
+    "id": 21,
+    "name": "Aloo Gobhi Masala",
+    "price": 260.0,
+    "category": "Main Course",
+    "sub_category": "Potato",
+    "is_vegetarian": true,
+    "is_chef_special": false,
+    "tags": [
+      "spicy",
+      "gobhi",
+      "aloo",
+      "main-course"
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Bhuna Aloo",
+    "price": 260.0,
+    "category": "Main Course",
+    "sub_category": "Potato",
+    "is_vegetarian": true,
+    "is_chef_special": false,
+    "tags": [
+      "aloo",
+      "main-course"
+    ]
+  },
+  {
+    "id": 23,
+    "name": "Chaap Tawa",
+    "price": 270.0,
+    "category": "Main Course",
+    "sub_category": "Soya Chaap",
+    "is_vegetarian": true,
+    "is_chef_special": false,
+    "tags": [
+      "chaap",
+      "main-course"
+    ]
+  },
+  {
+    "id": 24,
+    "name": "Dal Fry",
+    "price": 230.0,
+    "category": "Main Course",
+    "sub_category": "Dals",
+    "is_vegetarian": true,
+    "is_chef_special": false,
+    "tags": [
+      "dal",
+      "main-course"
+    ]
+  },
+  {
+    "id": 25,
+    "name": "Dum Aloo Kasmiri",
+    "price": 260.0,
+    "category": "Main Course",
+    "sub_category": "Potato",
+    "is_vegetarian": true,
+    "is_chef_special": false,
+    "tags": [
+      "aloo",
+      "main-course"
+    ]
+  },
+  {
+    "id": 26,
+    "name": "Kadhai Paneer",
+    "price": 280.0,
+    "category": "Main Course",
+    "sub_category": "Paneer",
+    "is_vegetarian": true,
+    "is_chef_special": false,
+    "tags": [
+      "paneer",
+      "main-course"
+    ]
+  },
+  {
+    "id": 27,
+    "name": "Kadhai Paneer Banarasi Dum Aloo",
+    "price": 260.0,
+    "category": "Main Course",
+    "sub_category": "Paneer",
+    "is_vegetarian": true,
+    "is_chef_special": false,
+    "tags": [
+      "paneer",
+      "aloo",
+      "main-course"
+    ]
+  },
+  {
+    "id": 28,
+    "name": "Malai Kofta",
+    "price": 280.0,
+    "category": "Main Course",
+    "sub_category": "",
+    "is_vegetarian": true,
+    "is_chef_special": true,
+    "tags": [
+      "creamy",
+      "main-course"
+    ]
+  },
+  {
+    "id": 29,
+    "name": "Matar Paneer",
+    "price": 280.0,
+    "category": "Main Course",
+    "sub_category": "Paneer",
+    "is_vegetarian": true,
+    "is_chef_special": false,
+    "tags": [
+      "paneer",
+      "main-course",
+      "matar"
+    ]
+  },
+  {
+    "id": 30,
+    "name": "Mushroom Masala",
+    "price": 280.0,
+    "category": "Main Course",
+    "sub_category": "Mushroom",
+    "is_vegetarian": true,
+    "is_chef_special": false,
+    "tags": [
+      "mushroom",
+      "spicy",
+      "main-course"
+    ]
+  },
+  {
+    "id": 31,
+    "name": "Mushroom Tawa",
+    "price": 300.0,
+    "category": "Main Course",
+    "sub_category": "Mushroom",
+    "is_vegetarian": true,
+    "is_chef_special": false,
+    "tags": [
+      "mushroom",
+      "main-course"
+    ]
+  },
+  {
+    "id": 32,
+    "name": "Only Dal Punchrangi",
+    "price": 250.0,
+    "category": "Main Course",
+    "sub_category": "Dals",
+    "is_vegetarian": true,
+    "is_chef_special": false,
+    "tags": [
+      "dal",
+      "main-course"
+    ]
+  },
+  {
+    "id": 33,
+    "name": "Palak Paneer",
+    "price": 280.0,
+    "category": "Main Course",
+    "sub_category": "Paneer",
+    "is_vegetarian": true,
+    "is_chef_special": false,
+    "tags": [
+      "paneer",
+      "palak",
+      "main-course"
+    ]
+  },
+  {
+    "id": 34,
+    "name": "Paneer Butter Masala",
+    "price": 280.0,
+    "category": "Main Course",
+    "sub_category": "Paneer",
+    "is_vegetarian": true,
+    "is_chef_special": false,
+    "tags": [
+      "paneer",
+      "spicy",
+      "main-course",
+      "creamy"
+    ]
+  },
+  {
+    "id": 35,
+    "name": "Paneer Kadhai",
+    "price": 280.0,
+    "category": "Main Course",
+    "sub_category": "Paneer",
+    "is_vegetarian": true,
+    "is_chef_special": false,
+    "tags": [
+      "paneer",
+      "main-course"
+    ]
+  },
+  {
+    "id": 36,
+    "name": "Paneer Kofta Makhani",
+    "price": 300.0,
+    "category": "Main Course",
+    "sub_category": "Paneer",
+    "is_vegetarian": true,
+    "is_chef_special": true,
+    "tags": [
+      "paneer",
+      "main-course"
+    ]
+  },
+  {
+    "id": 37,
+    "name": "Paneer Lazeez",
+    "price": 280.0,
+    "category": "Main Course",
+    "sub_category": "Paneer",
+    "is_vegetarian": true,
+    "is_chef_special": true,
+    "tags": [
+      "paneer",
+      "main-course"
+    ]
+  },
+  {
+    "id": 38,
+    "name": "Paneer Rogan Josh",
+    "price": 280.0,
+    "category": "Main Course",
+    "sub_category": "Paneer",
+    "is_vegetarian": true,
+    "is_chef_special": true,
+    "tags": [
+      "paneer",
+      "main-course"
+    ]
+  },
+  {
+    "id": 39,
+    "name": "Paneer Takatak",
+    "price": 280.0,
+    "category": "Main Course",
+    "sub_category": "Paneer",
+    "is_vegetarian": true,
+    "is_chef_special": true,
+    "tags": [
+      "paneer",
+      "main-course"
+    ]
+  },
+  {
+    "id": 40,
+    "name": "Soya Chaap Masala",
+    "price": 260.0,
+    "category": "Main Course",
+    "sub_category": "Soya Chaap",
+    "is_vegetarian": true,
+    "is_chef_special": false,
+    "tags": [
+      "chaap",
+      "spicy",
+      "main-course"
+    ]
+  },
+  {
+    "id": 41,
+    "name": "Veg Kadai Chaap",
+    "price": 270.0,
+    "category": "Main Course",
+    "sub_category": "Soya Chaap",
+    "is_vegetarian": true,
+    "is_chef_special": false,
+    "tags": [
+      "chaap",
+      "main-course"
+    ]
+  },
+  {
+    "id": 42,
+    "name": "Veg Kadhai",
+    "price": 260.0,
+    "category": "Main Course",
+    "sub_category": "",
+    "is_vegetarian": true,
+    "is_chef_special": false,
+    "tags": [
+      "main-course"
+    ]
+  },
+  {
+    "id": 43,
+    "name": "Chilli Paneer with Fried rice",
+    "price": 300.0,
+    "category": "Rice",
+    "sub_category": "Paneer",
+    "is_vegetarian": true,
+    "is_chef_special": false,
+    "tags": [
+      "fried",
+      "paneer",
+      "rice"
+    ]
+  },
+  {
+    "id": 44,
+    "name": "Green Pece Pulav",
+    "price": 170.0,
+    "category": "Rice",
+    "sub_category": "",
+    "is_vegetarian": true,
+    "is_chef_special": false,
+    "tags": [
+      "rice"
+    ]
+  },
+  {
+    "id": 45,
+    "name": "Veg Manchurian with Fried Rice",
+    "price": 300.0,
+    "category": "Rice",
+    "sub_category": "Rice",
+    "is_vegetarian": true,
+    "is_chef_special": false,
+    "tags": [
+      "fried",
+      "rice"
+    ]
+  },
+  {
+    "id": 46,
+    "name": "Achari Chaap",
+    "price": 250.0,
+    "category": "Tandoor",
+    "sub_category": "Soya Chaap",
+    "is_vegetarian": true,
+    "is_chef_special": false,
+    "tags": [
+      "chaap",
+      "tandoor"
+    ]
+  },
+  {
+    "id": 47,
+    "name": "Mushroom Tikka",
+    "price": 250.0,
+    "category": "Tandoor",
+    "sub_category": "Mushroom",
+    "is_vegetarian": true,
+    "is_chef_special": false,
+    "tags": [
+      "mushroom",
+      "tandoori",
+      "tandoor"
+    ]
+  },
+  {
+    "id": 48,
+    "name": "Paneer Tikka Masala",
+    "price": 280.0,
+    "category": "Tandoor",
+    "sub_category": "Paneer",
+    "is_vegetarian": true,
+    "is_chef_special": false,
+    "tags": [
+      "paneer",
+      "spicy",
+      "tandoori",
+      "tandoor"
+    ]
+  },
+  {
+    "id": 49,
+    "name": "Paneer Tikka Multani",
+    "price": 280.0,
+    "category": "Tandoor",
+    "sub_category": "Paneer",
+    "is_vegetarian": true,
+    "is_chef_special": false,
+    "tags": [
+      "paneer",
+      "tandoori",
+      "tandoor"
+    ]
+  },
+  {
+    "id": 50,
+    "name": "Tandoori Chaap Tikka",
+    "price": 250.0,
+    "category": "Tandoor",
+    "sub_category": "Soya Chaap",
+    "is_vegetarian": true,
+    "is_chef_special": false,
+    "tags": [
+      "chaap",
+      "tandoori",
+      "tandoor"
+    ]
+  },
+  {
+    "id": 51,
+    "name": "Standard Thali",
+    "price": 230.0,
+    "category": "Thalis",
+    "sub_category": "Thalis",
+    "is_vegetarian": true,
+    "is_chef_special": false,
+    "tags": [
+      "thalis"
+    ]
+  }
+]

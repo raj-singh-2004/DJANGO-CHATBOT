@@ -1,0 +1,250 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Menu PDF Upload</title>
+
+  <!-- Basic Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+</head>
+<body class="bg-light">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Restaurant Menu Uploader</a>
+    <span class="navbar-text ms-auto small" id="nav-user-label"></span>
+  </div>
+</nav>
+
+<div class="container mt-4 mb-5">
+
+  <!-- Warning if not logged in (no token in localStorage) -->
+  <div id="login-warning" class="alert alert-warning d-none">
+    No API token found. Please
+    <a href="/api/accounts/login-demo/" class="alert-link">login first</a>
+    using your Restaurant Admin account.
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+
+      <div class="text-center mb-3">
+        <h3 class="fw-semibold mb-1">Upload Menu PDF</h3>
+        <p class="text-muted mb-0 small">
+          Choose your restaurant’s menu PDF and let the system extract items for you.
+        </p>
+      </div>
+
+      <div class="card shadow-sm border-0">
+        <div class="card-body">
+          <form id="pdf-upload-form">
+            <div class="mb-3">
+              <label for="menu-pdf" class="form-label">Select PDF file</label>
+              <input
+                class="form-control"
+                type="file"
+                id="menu-pdf"
+                name="menu_pdf"
+                accept="application/pdf"
+                required
+              >
+              <div class="form-text">
+                Only PDF files are allowed.
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary" id="upload-btn">
+              Upload &amp; Extract
+            </button>
+            <span id="upload-status" class="ms-2 small"></span>
+          </form>
+        </div>
+      </div>
+
+      <div class="card mt-3 shadow-sm border-0">
+        <div class="card-header">
+          <span class="fw-semibold">API Response</span>
+        </div>
+        <div class="card-body">
+          <pre id="upload-result" class="small mb-0 text-wrap" style="white-space: pre-wrap;"></pre>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- Bootstrap JS (optional, just for styling) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  // === CONFIG: your actual upload API URL ===
+  // Adjust if your URL is different.
+  // e.g. if in urls.py you have: path("upload/", UploadAPIVIEw.as_view(), name="upload")
+  const UPLOAD_API_URL = "/api/restaurants/upload/";
+
+  // Keys used by login_demo.html
+  const ACCESS_TOKEN_KEY = "rb_access_token";
+  const USER_KEY = "rb_user";
+
+  // === CSRF helper (for SessionAuthentication; harmless for pure JWT) ===
+  function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+      const cookies = document.cookie.split(';');
+      for (let i = 0; i < cookies.length; i++) {
+        const cookie = cookies[i].trim();
+        if (cookie.substring(0, name.length + 1) === (name + '=')) {
+          cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+          break;
+        }
+      }
+    }
+    return cookieValue;
+  }
+  const csrftoken = getCookie('csrftoken');
+
+  function getAccessToken() {
+    return localStorage.getItem(ACCESS_TOKEN_KEY);
+  }
+
+  function getUserFromStorage() {
+    const raw = localStorage.getItem(USER_KEY);
+    if (!raw) return null;
+    try {
+      return JSON.parse(raw);
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function getAuthHeaders(extra = {}) {
+    const token = getAccessToken();
+    const headers = {
+      ...extra,
+    };
+    if (token) {
+      headers["Authorization"] = "Bearer " + token;
+    }
+    return headers;
+  }
+
+  function updateNavUserLabel() {
+    const label = document.getElementById("nav-user-label");
+    const user = getUserFromStorage();
+    const token = getAccessToken();
+
+    if (token && user) {
+      const name = user.username || user.email || "user";
+      label.textContent = "Logged in as " + name;
+    } else {
+      label.textContent = "Not logged in";
+    }
+  }
+
+  function showLoginWarningIfNeeded() {
+    const warning = document.getElementById("login-warning");
+    const token = getAccessToken();
+    const uploadBtn = document.getElementById("upload-btn");
+
+    if (!token) {
+      warning.classList.remove("d-none");
+      // Optionally disable upload if not logged in
+      uploadBtn.disabled = true;
+    } else {
+      warning.classList.add("d-none");
+      uploadBtn.disabled = false;
+    }
+  }
+
+  const form = document.getElementById("pdf-upload-form");
+  const statusEl = document.getElementById("upload-status");
+  const resultEl = document.getElementById("upload-result");
+  const uploadBtn = document.getElementById("upload-btn");
+
+  form.addEventListener("submit", async function (event) {
+    event.preventDefault();
+    statusEl.textContent = "";
+    statusEl.className = "ms-2 small";
+    resultEl.textContent = "";
+
+    const token = getAccessToken();
+    if (!token) {
+      statusEl.textContent = "No token found. Please login first.";
+      statusEl.classList.add("text-danger");
+      showLoginWarningIfNeeded();
+      return;
+    }
+
+    const fileInput = document.getElementById("menu-pdf");
+    const file = fileInput.files[0];
+
+    if (!file) {
+      statusEl.textContent = "Please choose a PDF first.";
+      statusEl.classList.add("text-danger");
+      return;
+    }
+
+    // Build FormData for multipart/form-data
+    const formData = new FormData();
+    formData.append("menu_pdf", file);
+
+    uploadBtn.disabled = true;
+    statusEl.textContent = "Uploading...";
+    statusEl.classList.remove("text-danger", "text-success");
+
+    try {
+      const res = await fetch(UPLOAD_API_URL, {
+        method: "POST",
+        headers: getAuthHeaders({
+          "X-CSRFToken": csrftoken,
+          // DO NOT set "Content-Type"; browser will set multipart boundary
+        }),
+        body: formData,
+      });
+
+      const text = await res.text();
+      let json;
+      try {
+        json = JSON.parse(text);
+      } catch (e) {
+        json = { raw: text };
+      }
+
+      if (res.status === 401) {
+        statusEl.textContent = "Unauthorized (401). Token invalid or expired. Please login again.";
+        statusEl.classList.add("text-danger");
+        showLoginWarningIfNeeded();
+      } else if (!res.ok) {
+        statusEl.textContent = "Upload failed.";
+        statusEl.classList.add("text-danger");
+      } else {
+        statusEl.textContent = "Upload successful ✅";
+        statusEl.classList.add("text-success");
+      }
+
+      resultEl.textContent = JSON.stringify(json, null, 2);
+
+    } catch (err) {
+      console.error(err);
+      statusEl.textContent = "Error calling API.";
+      statusEl.classList.add("text-danger");
+      resultEl.textContent = String(err);
+    } finally {
+      uploadBtn.disabled = false;
+    }
+  });
+
+  // On first load: show who is logged in & whether we have a token
+  document.addEventListener("DOMContentLoaded", () => {
+    updateNavUserLabel();
+    showLoginWarningIfNeeded();
+  });
+</script>
+</body>
+</html>
